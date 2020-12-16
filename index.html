@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+  <title>form iframe test</title>
+</head>
+<body>
+  <iframe id="ifr" src="form.html">
+  </iframe>
+  <button onClick="refreshIframe()">Refresh</button>
+  <script>
+    function refreshIframe() {
+      var ifrWin = document.getElementById('ifr').contentWindow;
+      var ifrForm = ifrWin.document.getElementById('ifr-form');
+      if (ifrForm) {
+        ifrForm.submit();
+      }
+    }
+  </script>
+</body>
